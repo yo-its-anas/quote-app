@@ -4,7 +4,8 @@ function App() {
   const [quote, setQuote] = useState(null);
 
   const getQuote = async () => {
-    const res = await fetch("http://backend:5000/api/quote");
+    const backendUrl = `http://${window.location.hostname}:5000/api/quote`;
+    const res = await fetch(backendUrl);
     const data = await res.json();
     setQuote(data);
   };
