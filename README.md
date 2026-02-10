@@ -26,3 +26,10 @@ Make sure Docker is installed.
 
 ```bash
 docker-compose up --build
+
+## Access App
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000/api/quote
+
+## Stop Containers
+- docker-compose down
