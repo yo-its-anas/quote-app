@@ -1,35 +1,59 @@
 # Quote App (React + Node + Docker)
 
 ## Description
-This is a simple 2-tier application built to understand:
-- React frontend
-- Node/Express backend
-- Docker & docker-compose
-- Frontend to backend communication
+
+A simple 2-tier app using:
+
+* React frontend
+* Node/Express backend
+* Docker Compose
+
+---
 
 ## Architecture
-- Frontend: React (Port 3000)
-- Backend: Node + Express (Port 5000)
 
-## API Endpoint
-GET /api/quote  
-Returns a random quote.
+* Frontend → Port 3000
+* Backend → Port 5000
 
-## How Frontend talks to Backend
-Inside Docker, frontend calls:
-http://backend:5000/api/quote
+---
 
-"backend" is the service name defined in docker-compose.
-
-## Run the App
-Make sure Docker is installed.
+## API
 
 ```bash
-docker-compose up --build
+GET /api/quote
+```
 
-## Access App
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000/api/quote
+---
 
-## Stop Containers
-- docker-compose down
+## How services talk
+
+Frontend calls backend using:
+
+```bash
+http://backend:5000/api/quote
+```
+
+(`backend` = service name in docker-compose)
+
+---
+
+## Run the app
+
+```bash
+docker compose up --build
+```
+
+---
+
+## Open in browser
+
+* http://localhost:3000
+* http://localhost:5000/api/quote
+
+---
+
+## Stop
+
+```bash
+docker compose down
+```
